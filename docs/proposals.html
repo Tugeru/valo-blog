@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiant Intel - Approach Comparison</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-val-red: #FF4655;
+            --color-val-navy: #0F1923;
+            --color-val-slate: #1F2326;
+            --color-val-white: #ECE8E1;
+            --color-val-grey: #8B978F;
+            --font-bebas: 'Bebas Neue', sans-serif;
+            --font-inter: 'Inter', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap');
+
+        body {
+            @apply bg-val-navy text-val-white font-inter;
+        }
+
+        h1, h2, h3 {
+            @apply font-bebas uppercase tracking-tighter;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <header class="mb-12 border-b-2 border-val-red pb-4">
+        <h1 class="text-6xl text-val-red">Radiant Intel</h1>
+        <p class="text-val-grey">Architectural Proposals</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Approach 1 -->
+        <div class="bg-val-slate p-6 border-l-4 border-val-grey hover:border-val-red transition-all">
+            <h2 class="text-3xl mb-4">1. Pure Blade Monolith</h2>
+            <p class="text-val-grey mb-4">Standard Laravel MVC with zero extra JS dependencies. Solid, fast, and easy to maintain.</p>
+            <ul class="text-sm space-y-2 list-disc list-inside text-val-white">
+                <li>Bespoke AuthControllers</li>
+                <li>Blade Components for UI</li>
+                <li>Standard Form POSTs</li>
+                <li>Native Browser Confirms</li>
+            </ul>
+            <div class="mt-6 text-val-grey text-xs">Best for: Extreme simplicity & stability.</div>
+        </div>
+
+        <!-- Approach 2 -->
+        <div class="bg-val-slate p-6 border-l-4 border-val-red ring-2 ring-val-red/20 shadow-xl">
+            <h2 class="text-3xl mb-4">2. Blade + Alpine.js <span class="text-sm bg-val-red text-white px-2 py-1 ml-2">Recommended</span></h2>
+            <p class="text-val-grey mb-4">Blade for structure, Alpine.js for "tactical" UI micro-interactions and seamless image previews.</p>
+            <ul class="text-sm space-y-2 list-disc list-inside text-val-white">
+                <li>Instant Image Upload Previews</li>
+                <li>Animated Delete Modals</li>
+                <li>Interactive Hover States</li>
+                <li>Bespoke Auth Controllers</li>
+            </ul>
+            <div class="mt-6 text-val-red text-xs font-bold">Best for: The full "Valorant Client" feel.</div>
+        </div>
+
+        <!-- Approach 3 -->
+        <div class="bg-val-slate p-6 border-l-4 border-val-grey hover:border-val-red transition-all">
+            <h2 class="text-3xl mb-4">3. Admin Livewire SPA</h2>
+            <p class="text-val-grey mb-4">Uses Laravel Livewire for a reactive, Single Page Application feel in the Admin Dashboard.</p>
+            <ul class="text-sm space-y-2 list-disc list-inside text-val-white">
+                <li>No page refreshes in Admin</li>
+                <li>Real-time validation</li>
+                <li>Search/Filter posts instantly</li>
+                <li>Bespoke Auth Controllers</li>
+            </ul>
+            <div class="mt-6 text-val-grey text-xs">Best for: High-volume content management.</div>
+        </div>
+    </div>
+
+    <footer class="mt-16 text-val-grey border-t border-val-slate pt-4">
+        <p>Selected Stack: Laravel 12 + Tailwind 4 + SQLite</p>
+    </footer>
+</body>
+</html>
