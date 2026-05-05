@@ -1,0 +1,13 @@
+{
+  "current_patch": "12.08",
+  "trending_agents": [
+    { "name": "Omen", "role": "Controller", "win_rate": 52.4, "change": 4.2 },
+    { "name": "Neon", "role": "Duelist", "win_rate": 50.8, "change": 2.8 },
+    { "name": "Miks", "role": "Controller", "win_rate": 48.2, "change": 0.0, "is_new": true }
+  ],
+  "featured_map": {
+    "name": "Ascent",
+    "status": "In Rotation",
+    "meta_description": "Mid control remains priority."
+  }
+}
