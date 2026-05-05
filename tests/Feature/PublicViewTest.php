@@ -30,7 +30,7 @@ class PublicViewTest extends TestCase
             'content' => 'Full tactical intel content.',
         ]);
 
-        $response = $this->get("/post/{$post->id}");
+        $response = $this->get("/posts/{$post->id}");
 
         $response->assertStatus(200);
         $response->assertSee('Unique Title');
