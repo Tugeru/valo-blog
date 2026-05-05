@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radiant Intel - Login</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
 <body class="bg-val-navy text-val-white font-inter min-h-screen flex items-center justify-center p-6">
     <div class="w-full max-w-md">
         <div class="mb-12 text-center">
-            <h1 class="text-6xl text-val-red mb-2">RADIANT INTEL</h1>
+            <img src="{{ asset('images/valo-logo.png') }}" alt="RADIANT INTEL" class="h-16 w-auto mx-auto mb-6">
             <p class="text-val-grey tracking-widest uppercase text-sm">ADMIN ACCESS REQUIRED</p>
         </div>
 
