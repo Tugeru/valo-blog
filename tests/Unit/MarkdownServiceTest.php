@@ -12,6 +12,7 @@ class MarkdownServiceTest extends TestCase
         $service = new MarkdownService();
         $markdown = "## Tactical Update\n- Buff Sage\n- Nerf Jett";
         $html = $service->toHtml($markdown);
+        // dd($html);
 
         $this->assertStringContainsString('<h2>Tactical Update</h2>', $html);
         $this->assertStringContainsString('<ul>', $html);
@@ -21,7 +22,7 @@ class MarkdownServiceTest extends TestCase
     public function test_it_strips_dangerous_html(): void
     {
         $service = new MarkdownService();
-        $markdown = "<script>alert('hack')</script> **Bold**";
+        $markdown = "Markdown <script>alert('hack')</script> **Bold**";
         $html = $service->toHtml($markdown);
 
         $this->assertStringNotContainsString('<script>', $html);
