@@ -6,7 +6,7 @@
         <p class="text-val-grey uppercase tracking-widest text-xs">Post Creation Protocol</p>
     </div>
 
-    <div class="max-w-4xl bg-val-slate p-12 border-l-4 border-val-red shadow-2xl">
+    <div class="max-w-4xl mx-auto bg-val-slate p-12 border-l-4 border-val-red shadow-2xl">
         <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data" class="space-y-12" x-data="{ photoPreview: null }">
             @csrf
 
@@ -25,7 +25,7 @@
                             </div>
                         </template>
                         <template x-if="photoPreview">
-                            <img :src="photoPreview" class="w-full aspect-video object-cover border-2 border-val-red transition-all">
+                            <img :src="photoPreview" alt="Tactical Preview" class="w-full aspect-video object-cover border-2 border-val-red transition-all">
                         </template>
                     </label>
                 </div>

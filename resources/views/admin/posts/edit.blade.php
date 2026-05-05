@@ -6,7 +6,7 @@
         <p class="text-val-grey uppercase tracking-widest text-xs">Post Edit Protocol</p>
     </div>
 
-    <div class="max-w-4xl bg-val-slate p-12 border-l-4 border-val-red shadow-2xl">
+    <div class="max-w-4xl mx-auto bg-val-slate p-12 border-l-4 border-val-red shadow-2xl">
         <form action="{{ route('admin.posts.update', $post) }}" method="POST" enctype="multipart/form-data" class="space-y-12" x-data="{ photoPreview: null }">
             @csrf
             @method('PUT')
@@ -22,12 +22,12 @@
                     <label for="image" class="cursor-pointer block">
                         <template x-if="!photoPreview">
                             <div class="w-full aspect-video bg-black/20 border-2 border-val-red transition-all flex items-center justify-center relative">
-                                <img src="{{ Storage::url($post->image_path) }}" class="w-full h-full object-cover opacity-50 group-hover:opacity-30 transition-all">
+                                <img src="{{ Storage::url($post->image_path) }}" alt="Tactical Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-30 transition-all">
                                 <span class="absolute text-val-white font-bebas text-2xl uppercase border-2 border-val-white px-4 py-2">Update Tactical Image</span>
                             </div>
                         </template>
                         <template x-if="photoPreview">
-                            <img :src="photoPreview" class="w-full aspect-video object-cover border-2 border-val-red transition-all">
+                            <img :src="photoPreview" alt="Tactical Preview" class="w-full aspect-video object-cover border-2 border-val-red transition-all">
                         </template>
                     </label>
                 </div>
