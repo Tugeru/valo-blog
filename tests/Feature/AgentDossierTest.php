@@ -14,10 +14,10 @@ class AgentDossierTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Jett');
-        $response->assertSee('Duelist');
-        $response->assertSee('Updraft');
-        $response->assertSee('Tailwind');
-        $response->assertSee('Cloudburst');
-        $response->assertSee('Blade Storm');
+        $response->assertSee('DUELIST');
+        $response->assertSee('UPDRAFT');
+        $response->assertSee('TAILWIND');
+        $response->assertSee('CLOUDBURST');
+        $response->assertSee('BLADE STORM');
     }
 }
