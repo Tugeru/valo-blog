@@ -36,8 +36,8 @@
                 {{ $post->excerpt }}
             </p>
             
-            <div class="text-val-white text-lg leading-loose space-y-8 font-inter whitespace-pre-wrap">
-                {!! nl2br(e($post->content)) !!}
+            <div class="tactical-content text-val-white text-lg leading-relaxed font-inter">
+                {!! $post->rendered_content !!}
             </div>
         </div>
 
