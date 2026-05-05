@@ -15,7 +15,7 @@
         <!-- Sidebar -->
         <aside class="w-64 bg-val-slate border-r-2 border-val-red flex flex-col">
             <div class="p-8 border-b border-val-navy">
-                <img src="{{ asset('images/valo-logo.png') }}" alt="Radiant Intel" class="h-8 w-auto">
+                <img src="{{ asset('images/valo-logo.png') }}" alt="RADIANT INTEL" class="h-8 w-auto">
                 <p class="text-val-grey text-[10px] tracking-widest uppercase">Administrative Hub</p>
             </div>
             

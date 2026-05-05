@@ -13,7 +13,7 @@
 <body class="bg-val-navy text-val-white font-inter min-h-screen flex items-center justify-center p-6">
     <div class="w-full max-w-md">
         <div class="mb-12 text-center">
-            <img src="{{ asset('images/valo-logo.png') }}" alt="Radiant Intel" class="h-16 w-auto mx-auto mb-6">
+            <img src="{{ asset('images/valo-logo.png') }}" alt="RADIANT INTEL" class="h-16 w-auto mx-auto mb-6">
             <p class="text-val-grey tracking-widest uppercase text-sm">ADMIN ACCESS REQUIRED</p>
         </div>
 
