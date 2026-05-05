@@ -13,7 +13,7 @@
             <div class="space-y-4">
                 <label class="block text-xs uppercase text-val-grey tracking-widest">Article Imagery</label>
                 <div class="relative group">
-                    <input type="file" name="image" id="image" required class="hidden" @change="
+                    <input type="file" name="image" id="image" required class="sr-only" @change="
                         const reader = new FileReader();
                         reader.onload = (e) => { photoPreview = e.target.result; };
                         reader.readAsDataURL($event.target.files[0]);
