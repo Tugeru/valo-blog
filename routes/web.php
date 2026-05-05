@@ -11,6 +11,10 @@ Route::get('/guides', [PublicController::class, 'guides'])->name('news.guides');
 Route::get('/patches', [PublicController::class, 'patches'])->name('news.patches');
 Route::get('/posts/{post}', [PublicController::class, 'show'])->name('posts.show');
 
+Route::get('/agents/jett', function () {
+    return view('agents.show', ['agent' => 'Jett']);
+});
+
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
