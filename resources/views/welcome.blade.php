@@ -2,15 +2,30 @@
 
 @section('content')
     <!-- Hero Section -->
-    <header class="py-32 px-6 border-b border-val-slate relative overflow-hidden bg-val-navy">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-val-red/5 rotate-45"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h1 class="text-9xl tracking-tighter mb-4 leading-none">THE NEW <span class="text-val-red">META</span></h1>
-            <p class="text-val-grey uppercase tracking-[0.5em] text-xl mb-12">Elite Tactical Intelligence • Patch Notes • Guides</p>
-            <div class="flex space-x-6">
-                <a href="/news" class="bg-val-red text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-white hover:text-val-red transition-all">Explore Intel</a>
-                <a href="/agents/jett" class="border border-white text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-val-red hover:border-val-red transition-all">Agent Dossiers</a>
+    <header class="relative h-[80vh] flex items-center px-6 border-b border-val-slate overflow-hidden bg-val-navy">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover grayscale brightness-50">
+                <source src="{{ asset('videos/hero-vid.webm') }}" type="video/webm">
+            </video>
+            <!-- Overlay for contrast -->
+            <div class="absolute inset-0 bg-gradient-to-r from-val-navy via-val-navy/60 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full relative z-10">
+            <div class="max-w-4xl">
+                <h1 class="text-9xl tracking-tighter mb-4 leading-none text-white">THE NEW <span class="text-val-red">META</span></h1>
+                <p class="text-val-grey uppercase tracking-[0.5em] text-xl mb-12">Elite Tactical Intelligence • Patch Notes • Guides</p>
+                <div class="flex space-x-6">
+                    <a href="/news" class="bg-val-red text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-white hover:text-val-red transition-all shadow-xl shadow-val-red/20">Explore Intel</a>
+                    <a href="/agents/jett" class="border border-white text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-val-red hover:border-val-red transition-all">Agent Dossiers</a>
+                </div>
             </div>
+        </div>
+
+        <!-- Decorative element -->
+        <div class="absolute bottom-0 right-0 p-12 opacity-10 pointer-events-none hidden lg:block">
+            <h2 class="text-[20rem] leading-none select-none">VALO</h2>
         </div>
     </header>
 
