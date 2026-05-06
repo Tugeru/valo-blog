@@ -26,7 +26,7 @@
         </header>
 
         <div class="w-full aspect-video mb-16 border-l-8 border-val-red shadow-2xl overflow-hidden">
-            <img src="{{ Storage::url($post->image_path) }}" 
+            <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" 
                  alt="{{ $post->title }}"
                  class="w-full h-full object-cover">
         </div>

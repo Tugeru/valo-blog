@@ -11,9 +11,28 @@ Route::get('/guides', [PublicController::class, 'guides'])->name('news.guides');
 Route::get('/patches', [PublicController::class, 'patches'])->name('news.patches');
 Route::get('/posts/{post}', [PublicController::class, 'show'])->name('posts.show');
 
-Route::get('/agents/jett', function () {
-    return view('agents.show', ['agent' => 'Jett']);
-});
+// Agent Dossiers
+$agents = [
+    'jett', 'phoenix', 'raze', 'reyna', 'yoru', 'neon', 'iso', 'waylay',
+    'breach', 'sova', 'skye', 'kayo', 'fade', 'gekko', 'tejo',
+    'brimstone', 'viper', 'omen', 'astra', 'harbor', 'clove', 'miks',
+    'sage', 'cypher', 'killjoy', 'chamber', 'deadlock', 'vyse', 'veto'
+];
+
+foreach ($agents as $agent) {
+    Route::get("/agents/{$agent}", function () use ($agent) {
+        return view("agents.{$agent}");
+    })->name("agents.{$agent}");
+}
+
+// Map Intel
+$maps = ['ascent', 'breeze', 'fracture', 'haven', 'lotus', 'pearl', 'split'];
+
+foreach ($maps as $map) {
+    Route::get("/maps/{$map}", function () use ($map) {
+        return view("maps.{$map}");
+    })->name("maps.{$map}");
+}
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

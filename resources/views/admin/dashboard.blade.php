@@ -27,7 +27,7 @@
                     <tr class="hover:bg-black/10 transition-all group">
                         <td class="p-6 text-val-grey font-mono text-xs">#{{ str_pad($post->id, 4, '0', STR_PAD_LEFT) }}</td>
                         <td class="p-6">
-                            <img src="{{ Storage::url($post->image_path) }}" alt="Intel Thumbnail" class="w-20 aspect-video object-cover grayscale group-hover:grayscale-0 transition-all border border-val-navy">
+                            <img src="{{ Storage::url($post->image_path) }}" alt="Intel Thumbnail" class="w-20 aspect-video object-cover transition-all border border-val-navy">
                         </td>
                         <td class="p-6 font-bebas text-2xl tracking-tighter group-hover:text-val-red transition-all">{{ $post->title }}</td>
                         <td class="p-6 text-val-grey text-xs">{{ $post->created_at->format('Y.m.d') }}</td>

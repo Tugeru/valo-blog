@@ -2,14 +2,24 @@
 
 @section('content')
     <!-- Hero Section -->
-    <header class="py-32 px-6 border-b border-val-slate relative overflow-hidden bg-val-navy">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-val-red/5 rotate-45"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h1 class="text-9xl tracking-tighter mb-4 leading-none">THE NEW <span class="text-val-red">META</span></h1>
-            <p class="text-val-grey uppercase tracking-[0.5em] text-xl mb-12">Elite Tactical Intelligence • Patch Notes • Guides</p>
-            <div class="flex space-x-6">
-                <a href="/news" class="bg-val-red text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-white hover:text-val-red transition-all">Explore Intel</a>
-                <a href="/agents/jett" class="border border-white text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-val-red hover:border-val-red transition-all">Agent Dossiers</a>
+    <header class="relative h-[80vh] flex items-center px-6 border-b border-val-slate overflow-hidden bg-val-navy">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover brightness-75 hover:brightness-100 transition-all duration-1000">
+                <source src="{{ asset('videos/hero-vid.webm') }}" type="video/webm">
+            </video>
+            <!-- Overlay for contrast -->
+            <div class="absolute inset-0 bg-gradient-to-r from-val-navy via-val-navy/40 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full relative z-10">
+            <div class="max-w-4xl">
+                <h1 class="text-9xl tracking-tighter mb-4 leading-none text-white drop-shadow-2xl">THE NEW <span class="text-val-red">META</span></h1>
+                <p class="text-val-grey uppercase tracking-[0.5em] text-xl mb-12 drop-shadow-md">Elite Tactical Intelligence • Patch Notes • Guides</p>
+                <div class="flex space-x-6">
+                    <a href="/news" class="bg-val-red text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-white hover:text-val-red transition-all shadow-xl shadow-val-red/20 hover:-translate-y-1">Explore Intel</a>
+                    <a href="/agents/jett" class="border border-white text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-val-red hover:border-val-red transition-all hover:-translate-y-1">Agent Dossiers</a>
+                </div>
             </div>
         </div>
     </header>
@@ -27,14 +37,17 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestPosts as $post)
-                    <article class="group bg-val-slate border-l-2 border-transparent hover:border-val-red transition-all">
+                    <article class="group bg-val-slate border-l-2 border-transparent hover:border-val-red transition-all hover:shadow-2xl hover:shadow-val-red/5 hover:-translate-y-2">
                         <div class="aspect-video overflow-hidden">
-                            <img src="{{ Storage::url($post->image_path) }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1">
                         </div>
                         <div class="p-6">
                             <time class="text-val-grey text-[10px] uppercase tracking-widest block mb-2">{{ $post->created_at->format('M d, Y') }}</time>
                             <h3 class="text-3xl mb-4 group-hover:text-val-red transition-all">{{ $post->title }}</h3>
-                            <a href="{{ route('posts.show', $post) }}" class="text-val-red text-xs uppercase tracking-widest font-bold">Read Report →</a>
+                            <a href="{{ route('posts.show', $post) }}" class="text-val-red text-xs uppercase tracking-widest font-bold inline-flex items-center group/link">
+                                Read Report 
+                                <span class="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
+                            </a>
                         </div>
                     </article>
                 @endforeach
@@ -51,11 +64,11 @@
                 <p class="text-val-grey text-lg mb-10 leading-relaxed">
                     Mid control remains the absolute priority on Ascent. Our updated tactical guide covers the latest Omen one-ways and Sova lineups that are currently dominating the VCT Stage 1 meta.
                 </p>
-                <a href="/maps/ascent" class="inline-block bg-white text-val-navy px-10 py-3 font-bebas text-xl tracking-tighter uppercase hover:bg-val-red hover:text-white transition-all">Explore Map Strat</a>
+                <a href="/maps/ascent" class="inline-block bg-white text-val-navy px-10 py-3 font-bebas text-xl tracking-tighter uppercase hover:bg-val-red hover:text-white transition-all shadow-lg hover:shadow-val-red/20">Explore Map Strat</a>
             </div>
-            <div class="relative">
-                <div class="absolute -inset-4 border border-val-red/20 rotate-3 pointer-events-none"></div>
-                <img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6901809059f13d8d/5f0476839d35661f237f8f94/Ascent_1.jpg" alt="Ascent" class="grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+            <div class="relative group">
+                <div class="absolute -inset-4 border border-val-red/20 rotate-3 pointer-events-none group-hover:rotate-0 transition-transform duration-700"></div>
+                <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" alt="Ascent" class="hover:shadow-2xl transition-all duration-700 shadow-2xl group-hover:scale-[1.02]">
             </div>
         </div>
     </section>
