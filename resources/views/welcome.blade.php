@@ -55,7 +55,7 @@
             </div>
             <div class="relative">
                 <div class="absolute -inset-4 border border-val-red/20 rotate-3 pointer-events-none"></div>
-                <img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6901809059f13d8d/5f0476839d35661f237f8f94/Ascent_1.jpg" alt="Ascent" class="grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" alt="Ascent" class="grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
             </div>
         </div>
     </section>
