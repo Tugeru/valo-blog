@@ -11,11 +11,11 @@
     <div class="max-w-7xl mx-auto px-6 py-20">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             @forelse($posts as $post)
-                <article class="group relative bg-val-slate flex flex-col hover:-translate-y-2 transition-all duration-300 border-l-4 border-transparent hover:border-val-red">
+                <article class="group relative bg-val-slate flex flex-col hover:-translate-y-2 transition-all duration-300 border-l-4 border-transparent hover:border-val-red hover:shadow-2xl hover:shadow-val-red/5">
                     <div class="aspect-video overflow-hidden">
                         <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" 
                              alt="{{ $post->title }}"
-                             class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-all duration-700">
+                             class="w-full h-full object-cover scale-105 group-hover:scale-110 transition-all duration-700">
                     </div>
                     
                     <div class="p-8 flex-1 flex flex-col">
@@ -33,7 +33,7 @@
                         </p>
                         
                         <a href="{{ route('posts.show', $post) }}" 
-                           class="inline-block bg-val-red hover:bg-white hover:text-val-red text-val-white px-8 py-3 font-bebas text-xl tracking-tighter uppercase transition-all w-fit self-end">
+                           class="inline-block bg-val-red hover:bg-white hover:text-val-red text-val-white px-8 py-3 font-bebas text-xl tracking-tighter uppercase transition-all w-fit self-end shadow-lg hover:shadow-val-red/20">
                             Read Full Intel
                         </a>
                     </div>
