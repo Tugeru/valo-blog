@@ -5,7 +5,7 @@
     <header class="relative h-[80vh] flex items-center px-6 border-b border-val-slate overflow-hidden bg-val-navy">
         <!-- Video Background -->
         <div class="absolute inset-0 z-0">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover grayscale brightness-50">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover brightness-50">
                 <source src="{{ asset('videos/hero-vid.webm') }}" type="video/webm">
             </video>
             <!-- Overlay for contrast -->
@@ -21,11 +21,6 @@
                     <a href="/agents/jett" class="border border-white text-white px-12 py-4 font-bebas text-2xl tracking-tighter uppercase hover:bg-val-red hover:border-val-red transition-all">Agent Dossiers</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Decorative element -->
-        <div class="absolute bottom-0 right-0 p-12 opacity-10 pointer-events-none hidden lg:block">
-            <h2 class="text-[20rem] leading-none select-none">VALO</h2>
         </div>
     </header>
 
@@ -44,7 +39,7 @@
                 @foreach($latestPosts as $post)
                     <article class="group bg-val-slate border-l-2 border-transparent hover:border-val-red transition-all">
                         <div class="aspect-video overflow-hidden">
-                            <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" class="w-full h-full object-cover transition-all duration-500">
                         </div>
                         <div class="p-6">
                             <time class="text-val-grey text-[10px] uppercase tracking-widest block mb-2">{{ $post->created_at->format('M d, Y') }}</time>
@@ -70,7 +65,7 @@
             </div>
             <div class="relative">
                 <div class="absolute -inset-4 border border-val-red/20 rotate-3 pointer-events-none"></div>
-                <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" alt="Ascent" class="grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" alt="Ascent" class="hover:shadow-2xl transition-all duration-700 shadow-2xl">
             </div>
         </div>
     </section>

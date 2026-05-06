@@ -15,7 +15,7 @@
                     <div class="aspect-video overflow-hidden">
                         <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" 
                              alt="{{ $post->title }}"
-                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700">
+                             class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-all duration-700">
                     </div>
                     
                     <div class="p-8 flex-1 flex flex-col">

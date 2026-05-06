@@ -7,6 +7,6 @@
     </div>
     <div class="relative">
         <div class="absolute -inset-4 border border-val-red/20 rotate-3 pointer-events-none"></div>
-        <img src="{{ $minimap }}" alt="{{ $name }} Minimap" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+        <img src="{{ $minimap }}" alt="{{ $name }} Minimap" class="w-full h-auto hover:scale-105 transition-all duration-700 shadow-2xl">
     </div>
 </div>
