@@ -13,7 +13,7 @@
             @forelse($posts as $post)
                 <article class="group relative bg-val-slate flex flex-col hover:-translate-y-2 transition-all duration-300 border-l-4 border-transparent hover:border-val-red">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ Storage::url($post->image_path) }}" 
+                        <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" 
                              alt="{{ $post->title }}"
                              class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700">
                     </div>

@@ -29,7 +29,7 @@
                 @foreach($latestPosts as $post)
                     <article class="group bg-val-slate border-l-2 border-transparent hover:border-val-red transition-all">
                         <div class="aspect-video overflow-hidden">
-                            <img src="{{ Storage::url($post->image_path) }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <img src="{{ str_starts_with($post->image_path, 'http') ? $post->image_path : Storage::url($post->image_path) }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
                         <div class="p-6">
                             <time class="text-val-grey text-[10px] uppercase tracking-widest block mb-2">{{ $post->created_at->format('M d, Y') }}</time>
